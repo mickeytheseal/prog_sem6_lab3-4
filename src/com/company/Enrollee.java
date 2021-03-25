@@ -3,11 +3,11 @@ package com.company;
 import java.util.ArrayList;
 
 public class Enrollee {
-    private String name;
-    private int age;
-    private int score;
-    private String id;
-    private Major major;
+    protected String name;
+    protected int age;
+    protected int score;
+    protected String id;
+    protected Major major;
 
     public Enrollee(String name, int age, int score, String id){
         this.name = name;
