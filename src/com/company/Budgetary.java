@@ -1,8 +1,10 @@
 package com.company;
 
 public class Budgetary extends Student{
+    private String bank_account;
+    private static final int scholarship = 5000;
 
-    public Budgetary(String name, int age, int score, String id) {
-        super(name, age, score, id);
+    public Budgetary(Student student) {
+        super(student);
     }
 }
