@@ -1,6 +1,7 @@
 package com.company;
 
 
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class Student extends Enrollee{
@@ -14,7 +15,19 @@ public class Student extends Enrollee{
         int year = Calendar.getInstance().get(Calendar.YEAR);
         stud_id = String.valueOf(year).substring(2) + major.name().substring(0,2) + String.valueOf(code);
         code++;
+
+        marks = new int[8][6]; //[семестр][предмет]
     }
 
     public String getStud_id(){ return stud_id; }
+
+    // TODO: 26.03.2021 придумать нормальный нейминг и поставить ограничение на оцеки
+    public void setMarks(int sem, int predm, int value){
+        marks[sem][predm] = value;
+    }
+
+    public String getMarks(){
+        return Arrays.deepToString(marks);
+    }
+
 }

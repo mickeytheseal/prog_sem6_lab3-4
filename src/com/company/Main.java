@@ -14,5 +14,16 @@ public class Main {
         System.out.println("You picked " + e1.getMajor().name());
         Student s1 = new Student(e1);
         System.out.println(s1.getStud_id());
+
+        Budgetary b1 = new Budgetary(s1);
+        b1.sendScholarship();
+
+        Extrabudgetary ex1 = new Extrabudgetary(s1);
+        ex1.extendContract();
+        ex1.extendContract();
+        ex1.setPaid();
+        ex1.extendContract();
+
+        System.out.println(ex1.getContract());
     }
 }

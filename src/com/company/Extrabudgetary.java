@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Extrabudgetary extends Student{
-    private String contract;
+    private final String contract;
     private Date expiration_date;
     private boolean is_paid;    //оплачен ли следующий семестр
 
@@ -16,6 +16,7 @@ public class Extrabudgetary extends Student{
         c.add(Calendar.MONTH, 4);
         expiration_date = c.getTime();
         is_paid = true;
+        contract = String.valueOf(this.hashCode());
     }
 
     public String getContract(){ return contract; }
@@ -30,6 +31,7 @@ public class Extrabudgetary extends Student{
             c.add(Calendar.MONTH, 4);
             expiration_date = c.getTime();
             is_paid = false;
+            System.out.println("Contract extended.");
         }
         else {
             System.out.println("Student hasn't paid yet. Notification sent.");
