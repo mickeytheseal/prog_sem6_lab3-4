@@ -8,8 +8,8 @@ public class Extrabudgetary extends Student{
     private Date expiration_date;
     private boolean is_paid;    //оплачен ли следующий семестр
 
-    public Extrabudgetary(Student student) {
-        super(student);
+    public Extrabudgetary(Enrollee enrolee) {
+        super(enrolee);
         Date date = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(date);
