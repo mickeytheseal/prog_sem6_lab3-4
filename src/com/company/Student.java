@@ -6,7 +6,7 @@ import java.util.Calendar;
 
 public class Student extends Enrollee{
     private static int code = 100;
-    private final String stud_id;
+    protected final String stud_id;
     private int[][] marks;
 
     public Student(Enrollee enrollee){
@@ -15,6 +15,12 @@ public class Student extends Enrollee{
         int year = Calendar.getInstance().get(Calendar.YEAR);
         stud_id = String.valueOf(year).substring(2) + major.name().substring(0,2) + String.valueOf(code);
         code++;
+        marks = new int[8][6]; //[семестр][предмет]
+    }
+    public Student(Student student){
+        super(student.name, student.age, student.score, student.id);
+        super.major = student.major;
+        stud_id = student.stud_id;
 
         marks = new int[8][6]; //[семестр][предмет]
     }

@@ -1,5 +1,8 @@
 package com.company;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class Budgetary extends Student{
     private String bank_account;
     private static final int scholarship = 5000;
@@ -7,8 +10,8 @@ public class Budgetary extends Student{
     public Budgetary(Enrollee enrollee) {
         super(enrollee);
     }
-    public Budgetary(Extrabudgetary extrabudgetary) {
-        super(extrabudgetary);
+    public Budgetary(Student student) {
+        super(student);
     }
 
     public void sendScholarship(){

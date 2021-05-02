@@ -16,26 +16,34 @@ public class Main {
         int mjr_num = sc.nextInt();
         e1.setMajor(majors[mjr_num]);
         System.out.println("You picked " + e1.getMajor().name());
+
+        Extrabudgetary ex1 = null;
+        Budgetary b1 = null;
         if(e1.getMajor().getScore() > e1.score){
             System.out.println("You score isn't enough for budget. You have to sign a contract.");
-            Extrabudgetary ex1 = new Extrabudgetary(e1);
+            ex1 = new Extrabudgetary(e1);
+            System.out.println(ex1.getStud_id());
         }
         else{
             System.out.println("You've entered budgetary " + e1.getMajor().name());
-            Budgetary b1 = new Budgetary(e1);
+            b1 = new Budgetary(e1);
+            System.out.println(b1.getStud_id());
         }
-        Student s1 = new Student(e1);
-        System.out.println("Your student id: " + s1.getStud_id());
 
-        Extrabudgetary ex1 = new Extrabudgetary(s1);
         ex1.extendContract();
         ex1.extendContract();
         ex1.setPaid();
         ex1.extendContract();
+        System.out.println(ex1.getStud_id());
 
         //Перевод на бюджет
-        Student b1 = new Budgetary(s1);
+        b1 = new Budgetary(ex1);
+        System.out.println("Student is budgetary now.");
+        System.out.println(b1.getStud_id());
 
-        System.out.println(ex1.getContract());
+        Extrabudgetary ex2 = new Extrabudgetary(e1);
+        System.out.println(ex2.getStud_id());
+        Budgetary b2 = new Budgetary(ex2);
+        System.out.println(b2.getStud_id());
     }
 }

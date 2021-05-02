@@ -18,6 +18,16 @@ public class Extrabudgetary extends Student{
         is_paid = true;
         contract = String.valueOf(this.hashCode());
     }
+    public Extrabudgetary(Student student) {
+        super(student);
+        Date date = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.add(Calendar.MONTH, 4);
+        expiration_date = c.getTime();
+        is_paid = true;
+        contract = String.valueOf(this.hashCode());
+    }
 
     public String getContract(){ return contract; }
     public boolean getIsPaid(){ return is_paid; }
