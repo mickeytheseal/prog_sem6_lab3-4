@@ -17,6 +17,7 @@ public class Student extends Enrollee{
         code++;
         marks = new int[8][6]; //[семестр][предмет]
     }
+
     public Student(Student student){
         super(student.name, student.age, student.score, student.id);
         super.major = student.major;

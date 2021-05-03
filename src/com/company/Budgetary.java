@@ -10,9 +10,7 @@ public class Budgetary extends Student{
     public Budgetary(Enrollee enrollee) {
         super(enrollee);
     }
-    public Budgetary(Student student) {
-        super(student);
-    }
+    public Budgetary(Student student) { super(student); }
 
     public void sendScholarship(){
         System.out.println("Scholarship sent");
