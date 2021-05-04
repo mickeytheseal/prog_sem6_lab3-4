@@ -30,6 +30,7 @@ public class Main {
             System.out.println(b1.getStud_id());
         }
 
+        //Для тестирования в случае поступления на внебюджет
         ex1.extendContract();
         ex1.extendContract();
         ex1.setPaid();
