@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Budgetary extends Student{
     private String bank_account;
-    private static final int scholarship = 5000;
+    private static final int scholarship_amount = 5000;
 
     public Budgetary(Enrollee enrollee) {
         super(enrollee);
