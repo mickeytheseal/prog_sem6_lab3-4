@@ -29,4 +29,7 @@ public class Enrollee {
         return result;
     }
 
+    public String getInfo(){
+        return "Name:" + name + ", Age:" + age + ", Score:" + score + ", ID:" + id;
+    }
 }
