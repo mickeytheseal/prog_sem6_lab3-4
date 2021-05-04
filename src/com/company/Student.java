@@ -4,10 +4,10 @@ package com.company;
 import java.util.Arrays;
 import java.util.Calendar;
 
-public class Student extends Enrollee{
+public abstract class Student extends Enrollee{
     private static int code = 100;
     protected final String stud_id;
-    private int[][] marks;
+    private int[][] marks; //для лабы 4
 
     public Student(Enrollee enrollee){
         super(enrollee.name, enrollee.age, enrollee.score, enrollee.id);
