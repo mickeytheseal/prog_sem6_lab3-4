@@ -8,7 +8,7 @@ public enum Major {
     DES(210),   //Design
     PR(270);    //Public relations
 
-    private int score;
+    private final int score;
 
     Major(int score){
         this.score = score;
