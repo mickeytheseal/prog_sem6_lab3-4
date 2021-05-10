@@ -8,6 +8,7 @@ public abstract class Student extends Enrollee{
     private static int code = 100;
     protected final String stud_id;
     private ArrayList<Mark> marks;
+    private ArrayList<Mark> failed;
 
     public Student(Enrollee enrollee){
         super(enrollee.name, enrollee.age, enrollee.score, enrollee.id);
@@ -16,6 +17,7 @@ public abstract class Student extends Enrollee{
         stud_id = String.valueOf(year).substring(2) + major.name().substring(0,2) + String.valueOf(code);
         code++;
         marks = new ArrayList<>();
+        failed = new ArrayList<>();
     }
 
     public Student(Student student){
@@ -29,12 +31,19 @@ public abstract class Student extends Enrollee{
 
     public void setMark(int value, int term, Subject subject){
         Mark new_mark = new Mark(value,term,subject);
-        Stream<Mark> stream = marks.stream();
-        stream.filter(mark -> mark.equals(new_mark)).findAny().ifPresent(to_change -> marks.remove(to_change));
+        if (value <= 2){
+            failed.add(new_mark);
+        }else {
+            Stream<Mark> failed_stream = failed.stream();
+            failed_stream.filter(mark -> mark.equals(new_mark)).findAny().ifPresent(to_remove -> failed.remove(to_remove));
+        }
+        Stream<Mark> marks_stream = marks.stream();
+        marks_stream.filter(mark -> mark.equals(new_mark)).findAny().ifPresent(to_change -> marks.remove(to_change));
         marks.add(new_mark);
     }
 
-    public ArrayList<Mark> getMarks(){
-        return marks;
-    }
+    public ArrayList<Mark> getMarks(){ return marks; }
+
+    public ArrayList<Mark> getFailed(){ return failed; }
+
 }
