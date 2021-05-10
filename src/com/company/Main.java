@@ -56,10 +56,12 @@ public class Main {
         Budgetary b1 = new Budgetary(e1);
         System.out.println(b1.getStud_id());
         b1.setMark(5,1,Subject.DATABASES);
-        b1.setMark(4,1,Subject.FINANCES);
-        b1.setMark(5,1,Subject.FINANCES);
-        System.out.println(Arrays.toString(b1.getMarks().toArray()));
-
-
+        b1.setMark(2,1,Subject.FINANCES);
+        System.out.println("Marks: "+Arrays.toString(b1.getMarks().toArray()));
+        System.out.println("Failed: "+Arrays.toString(b1.getFailed().toArray()));
+        b1.setMark(3,1,Subject.FINANCES);
+        System.out.println("After re-test");
+        System.out.println("Marks: "+Arrays.toString(b1.getMarks().toArray()));
+        System.out.println("Failed: "+Arrays.toString(b1.getFailed().toArray()));
     }
 }
