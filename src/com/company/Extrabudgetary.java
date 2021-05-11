@@ -15,7 +15,7 @@ public class Extrabudgetary extends Student{
         c.setTime(date);
         c.add(Calendar.MONTH, 4);
         expiration_date = c.getTime();
-        is_paid = true;
+        is_paid = false;
         contract = String.valueOf(this.hashCode());
     }
     public Extrabudgetary(Student student) {
@@ -25,7 +25,7 @@ public class Extrabudgetary extends Student{
         c.setTime(date);
         c.add(Calendar.MONTH, 4);
         expiration_date = c.getTime();
-        is_paid = true;
+        is_paid = false;
         contract = String.valueOf(this.hashCode());
     }
 
@@ -33,6 +33,14 @@ public class Extrabudgetary extends Student{
     public boolean getIsPaid(){ return is_paid; }
     public void setPaid(){ is_paid = true; }
 
+    @Override
+    public void upperTransfer() {
+        if (is_paid) {
+            super.upperTransfer();
+        } else {
+            System.out.println("Student hasn't paid yet. Notification sent.");
+        }
+    }
 
     public void extendContract(){
         if (is_paid){
@@ -47,4 +55,5 @@ public class Extrabudgetary extends Student{
             System.out.println("Student hasn't paid yet. Notification sent.");
         }
     }
+
 }

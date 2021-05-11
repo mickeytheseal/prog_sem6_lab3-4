@@ -7,6 +7,7 @@ import java.util.stream.Stream;
 public abstract class Student extends Enrollee{
     private static int code = 100;
     protected final String stud_id;
+    private static int term;
     private ArrayList<Mark> marks;
     private ArrayList<Mark> failed;
 
@@ -16,6 +17,7 @@ public abstract class Student extends Enrollee{
         int year = Calendar.getInstance().get(Calendar.YEAR);
         stud_id = String.valueOf(year).substring(2) + major.name().substring(0,2) + String.valueOf(code);
         code++;
+        term = 1;
         marks = new ArrayList<>();
         failed = new ArrayList<>();
     }
@@ -28,6 +30,18 @@ public abstract class Student extends Enrollee{
 
     public String getStud_id(){ return stud_id; }
 
+    public void upperTransfer(){
+        if (term % 2 != 0){
+            System.out.println("It is not the end of the course");
+        }else if (failed.size() <= 3){
+            term++;
+        }else{
+            System.out.println("Student have " + failed.size() + " failed exams.");
+        }
+    }
+
+    public int getTerm(){ return term; }
+    public static void nextTerm(){ term++; }
 
     public void setMark(int value, int term, Subject subject){
         Mark new_mark = new Mark(value,term,subject);
