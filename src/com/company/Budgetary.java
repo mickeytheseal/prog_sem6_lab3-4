@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Calendar;
-import java.util.Date;
 
 public class Budgetary extends Student{
     private String bank_account;
@@ -15,4 +13,5 @@ public class Budgetary extends Student{
     public void sendScholarship(){
         System.out.println("Scholarship sent");
     }
+
 }
