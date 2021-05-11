@@ -60,4 +60,19 @@ public abstract class Student extends Enrollee{
 
     public ArrayList<Mark> getFailed(){ return failed; }
 
+    public String getInfo() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", score=" + score +
+                ", id='" + id + '\'' +
+                ", major=" + major +
+                ", stud_id='" + stud_id + '\'' +
+                '}';
+    }
+
+    @Override
+    public String toString() {
+        return stud_id;
+    }
 }
