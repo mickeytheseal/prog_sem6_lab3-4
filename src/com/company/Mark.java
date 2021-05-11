@@ -4,10 +4,10 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Mark {
-    private int value;
-    private int term;
-    private Subject subject;
-    private Date date;
+    private final int value;
+    private final int term;
+    private final Subject subject;
+    private final Date date;
 
     public Mark(int value,int term,Subject subject){
         this.value = value;
