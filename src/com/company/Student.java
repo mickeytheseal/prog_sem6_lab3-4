@@ -7,7 +7,9 @@ import java.util.stream.Stream;
 public abstract class Student extends Enrollee{
     private static int code = 100;
     protected final String stud_id;
+    // TODO: 12.05.2021 переделать систему семестров (проблема со static) 
     private static int term;
+    private int course;
     private ArrayList<Mark> marks;
     private ArrayList<Mark> failed;
 
@@ -18,6 +20,7 @@ public abstract class Student extends Enrollee{
         stud_id = String.valueOf(year).substring(2) + major.name().substring(0,2) + String.valueOf(code);
         code++;
         term = 1;
+        course = 1;
         marks = new ArrayList<>();
         failed = new ArrayList<>();
     }
@@ -34,9 +37,10 @@ public abstract class Student extends Enrollee{
         if (term % 2 != 0){
             System.out.println("It is not the end of the course");
         }else if (failed.size() <= 3){
-            term++;
+            course++;
+            System.out.println("Student moved to " + course + " course");
         }else{
-            System.out.println("Student have " + failed.size() + " failed exams.");
+            System.out.println("Student have " + failed.size() + " failed exams");
         }
     }
 
@@ -68,6 +72,7 @@ public abstract class Student extends Enrollee{
                 ", id='" + id + '\'' +
                 ", major=" + major +
                 ", stud_id='" + stud_id + '\'' +
+                ", course='" + course + '\'' +
                 '}';
     }
 
